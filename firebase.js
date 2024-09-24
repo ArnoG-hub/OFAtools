@@ -24,7 +24,7 @@ export async function addRelease(name) {
       name: name,
       progress: 0,
       bugs: [],
-      changelogs: []
+      logs: []
     });
     console.log(`La release "${name}" a été ajoutée avec succès.`);
     return docRef.id;
