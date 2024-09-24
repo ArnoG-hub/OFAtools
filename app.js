@@ -107,11 +107,11 @@ async function addBug(id) {
 
 
 async function addLog(id) {
-    const bugDescription = prompt("ChangeLog:");
-    if (bugDescription) {
+    const logDescription = prompt("ChangeLog:");
+    if (logDescription) {
         const releaseRef = doc(db, "releases", id);
         await updateDoc(releaseRef, { 
-            Logs: arrayUnion(LogDescription) 
+            logs: arrayUnion(logDescription) 
         });
         alert("Log ajouté avec succès!");
     }
