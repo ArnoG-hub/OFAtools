@@ -72,7 +72,7 @@ h1 {
 
 progress {
     width: 100%;
-    height: 20px;
+    height: 25px;
 }
 
 .action-buttons {
@@ -82,6 +82,8 @@ progress {
 }
 
 .release button {
+    background-color: #008CBA;
+    color: white;
     margin-right: 5px;
     margin-top: 5px;
     padding: 5px 10px;
