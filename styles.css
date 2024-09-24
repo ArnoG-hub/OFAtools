@@ -78,12 +78,12 @@ progress {
 .action-buttons {
     display: flex;
     justify-content: flex-start;
+    background-color: #008CBA;
+    color: white;
     margin-bottom: 20px;
 }
 
 .release button {
-    background-color: #008CBA;
-    color: white;
     margin-right: 5px;
     margin-top: 5px;
     padding: 5px 10px;
