@@ -111,7 +111,7 @@ async function addLog(id) {
     if (bugDescription) {
         const releaseRef = doc(db, "releases", id);
         await updateDoc(releaseRef, { 
-            Logs: arrayUnion(LargestContentfulPaintDescription) 
+            Logs: arrayUnion(LogDescription) 
         });
         alert("Log ajouté avec succès!");
     }
