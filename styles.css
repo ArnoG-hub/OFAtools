@@ -78,8 +78,6 @@ progress {
 .action-buttons {
     display: flex;
     justify-content: flex-start;
-    background-color: #008CBA;
-    color: white;
     margin-bottom: 20px;
 }
 
