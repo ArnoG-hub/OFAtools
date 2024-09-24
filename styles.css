@@ -10,7 +10,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    background-color: #ffffff;
+    background-color: #2f0ec5;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -25,12 +25,12 @@ h1 {
     display: inline-block;
     margin: 0;
     padding: 10px 20px;
-    border: 2px solid #333;
+    border: 2px solid #ff0000;
     background-color: #fff;
     border-radius: 5px;
 }
 
-.save-button, .add-release-button, .read-bugs-button {
+.save-button, .add-release-button, .read-bugs-button, .read-logs-button {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -50,6 +50,10 @@ h1 {
 
 .read-bugs-button {
     background-color: #f44336;
+}
+
+.read-logs-button {
+    background-color: #35dd14;
 }
 
 .release {
@@ -87,6 +91,11 @@ progress {
 }
 
 .release button.add-bug {
-    background-color: #ff9800;
+    background-color: #fc0404;
+    color: white;
+}
+
+.release button.add-log {
+    background-color: #04fc04;
     color: white;
 }

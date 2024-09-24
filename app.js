@@ -41,6 +41,7 @@ function createReleaseElement(id, release) {
         <button class="rename-release">Renommer</button>
         <button class="delete-release">Supprimer</button>
         <button class="add-bug">Bug</button>
+        <button class="add-log">log</button>
         <button class="change-category">Changer catégorie</button>
     `;
 
@@ -48,6 +49,7 @@ function createReleaseElement(id, release) {
     element.querySelector('.rename-release').addEventListener('click', () => renameRelease(id));
     element.querySelector('.delete-release').addEventListener('click', () => deleteRelease(id));
     element.querySelector('.add-bug').addEventListener('click', () => addBug(id));
+    element.querySelector('.add-log').addEventListener('click', () => addLog(id));
     element.querySelector('.change-category').addEventListener('click', () => changeCategory(id));
 
     return element;
@@ -103,6 +105,20 @@ async function addBug(id) {
     }
 }
 
+
+async function addLog(id) {
+    const bugDescription = prompt("ChangeLog:");
+    if (bugDescription) {
+        const releaseRef = doc(db, "releases", id);
+        await updateDoc(releaseRef, { 
+            Logs: arrayUnion(LargestContentfulPaintDescription) 
+        });
+        alert("Log ajouté avec succès!");
+    }
+}
+
+
+
 async function changeCategory(id) {
     const newCategory = prompt("Nouvelle catégorie:");
     if (newCategory) {
@@ -133,6 +149,28 @@ async function readAllBugs() {
     }
 }
 
+
+async function readAllLogs() {
+    const querySnapshot = await getDocs(releasesCollection);
+    let allLogs = [];
+    querySnapshot.forEach((doc) => {
+        const release = doc.data();
+        if (release.logs && release.logs.length > 0) {
+            alllogs.push(`${release.name}:`);
+            release.logs.forEach((log, index) => {
+                alllogs.push(`  ${index + 1}. ${log}`);
+            });
+            alllogs.push(''); // Add an empty line between releases
+        }
+    });
+    
+    if (alllogs.length > 0) {
+        alert(alllogs.join('\n'));
+    } else {
+        alert("Aucun log enregistré pour le moment.");
+    }
+}
+
 async function saveAllChanges() {
     const releases = document.querySelectorAll('.release');
     for (const release of releases) {
@@ -150,5 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('addReleaseButton').addEventListener('click', addNewRelease);
     document.getElementById('saveButton').addEventListener('click', saveAllChanges);
     document.getElementById('readBugsButton').addEventListener('click', readAllBugs);
+    document.getElementById('readLogsButton').addEventListener('click', readAllLogs);
     loadReleases();
 });
