@@ -156,16 +156,16 @@ async function readAllLogs() {
     querySnapshot.forEach((doc) => {
         const release = doc.data();
         if (release.logs && release.logs.length > 0) {
-            alllogs.push(`${release.name}:`);
+            allLogs.push(`${release.name}:`);
             release.logs.forEach((log, index) => {
-                alllogs.push(`  ${index + 1}. ${log}`);
+                allLogs.push(`  ${index + 1}. ${log}`);
             });
-            alllogs.push(''); // Add an empty line between releases
+            allLogs.push(''); // Add an empty line between releases
         }
     });
     
-    if (alllogs.length > 0) {
-        alert(alllogs.join('\n'));
+    if (allLogs.length > 0) {
+        alert(allLogs.join('\n'));
     } else {
         alert("Aucun log enregistré pour le moment.");
     }
