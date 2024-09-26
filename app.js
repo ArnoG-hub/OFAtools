@@ -43,6 +43,9 @@ function createReleaseElement(id, release) {
         <button class="add-bug">Bug</button>
         <button class="add-log">log</button>
         <button class="change-category">Changer catégorie</button>
+       
+
+
     `;
 
     element.querySelector('.modify-progress').addEventListener('click', () => modifyProgress(id));
@@ -51,6 +54,7 @@ function createReleaseElement(id, release) {
     element.querySelector('.add-bug').addEventListener('click', () => addBug(id));
     element.querySelector('.add-log').addEventListener('click', () => addLog(id));
     element.querySelector('.change-category').addEventListener('click', () => changeCategory(id));
+    
 
     return element;
 }
@@ -113,7 +117,7 @@ async function addLog(id) {
         await updateDoc(releaseRef, { 
             logs: arrayUnion(logDescription) 
         });
-        alert("Log ajouté avec succès!");
+        alert("ChangeLog ajouté avec succès!");
     }
 }
 
@@ -167,7 +171,7 @@ async function readAllLogs() {
     if (allLogs.length > 0) {
         alert(allLogs.join('\n'));
     } else {
-        alert("Aucun log enregistré pour le moment.");
+        alert("Aucun Changelog enregistré pour le moment.");
     }
 }
 
