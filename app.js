@@ -40,8 +40,8 @@ function createReleaseElement(id, release) {
         <button class="modify-progress">Modifier progression</button>
         <button class="rename-release">Renommer</button>
         <button class="delete-release">Supprimer</button>
-        <button class="add-bug">Bug</button>
-        <button class="add-log">log</button>
+        <button class="add-bug">add-Bug</button>
+        <button class="add-log">add-log</button>
         <button class="change-category">Changer catégorie</button>
        
 
