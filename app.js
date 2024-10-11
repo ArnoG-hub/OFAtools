@@ -42,7 +42,7 @@ function createReleaseElement(id, release) {
         <button class="delete-release">Supprimer</button>
         <button class="add-bug">add-Bug</button>
         <button class="add-log">add-log</button>
-        <button class="change-category">Changer catégorie</button>
+        <button class="change-category">Infos</button>
        
 
 
@@ -124,7 +124,7 @@ async function addLog(id) {
 
 
 async function changeCategory(id) {
-    const newCategory = prompt("Nouvelle catégorie:");
+    const newCategory = prompt("Nouvelle Info:");
     if (newCategory) {
         const releaseRef = doc(db, "releases", id);
         await updateDoc(releaseRef, { category: newCategory });
