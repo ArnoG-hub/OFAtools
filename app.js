@@ -33,7 +33,7 @@ function createReleaseElement(id, release) {
     element.dataset.id = id;
     element.innerHTML = `
         <h3 contenteditable="true">${release.name}</h3>
-        <p>Catégorie: ${release.category || "Non catégorisé"}</p>
+        <p>INFO: ${release.category || "Non catégorisé"}</p>
         <progress value="${release.progress}" max="100"></progress>
         <span>${release.progress}%</span>
         <br>
